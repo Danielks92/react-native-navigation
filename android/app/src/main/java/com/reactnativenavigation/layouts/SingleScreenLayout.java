@@ -41,7 +41,7 @@ public class SingleScreenLayout extends BaseLayout {
     private final SideMenuParams leftSideMenuParams;
     private final SideMenuParams rightSideMenuParams;
     protected ScreenStack stack;
-    private SnackbarAndFabContainer snackbarAndFabContainer;
+    // private SnackbarAndFabContainer snackbarAndFabContainer;
     protected LeftButtonOnClickListener leftButtonOnClickListener;
     private @Nullable SideMenu sideMenu;
     private final SlidingOverlaysQueue slidingOverlaysQueue = new SlidingOverlaysQueue();
@@ -108,11 +108,11 @@ public class SingleScreenLayout extends BaseLayout {
     }
 
     private void createFabAndSnackbarContainer() {
-        snackbarAndFabContainer = new SnackbarAndFabContainer(getContext(), this);
+        // snackbarAndFabContainer = new SnackbarAndFabContainer(getContext(), this);
         RelativeLayout.LayoutParams lp = new LayoutParams(MATCH_PARENT, MATCH_PARENT);
         lp.addRule(ALIGN_PARENT_BOTTOM);
-        snackbarAndFabContainer.setLayoutParams(lp);
-        getScreenStackParent().addView(snackbarAndFabContainer);
+        // snackbarAndFabContainer.setLayoutParams(lp);
+        // getScreenStackParent().addView(snackbarAndFabContainer);
     }
 
     @Override
@@ -138,7 +138,7 @@ public class SingleScreenLayout extends BaseLayout {
     @Override
     public void destroy() {
         stack.destroy();
-        snackbarAndFabContainer.destroy();
+        // snackbarAndFabContainer.destroy();
         if (sideMenu != null) {
             sideMenu.destroy();
         }
@@ -243,12 +243,12 @@ public class SingleScreenLayout extends BaseLayout {
     @Override
     public void showSnackbar(SnackbarParams params) {
         final String navigatorEventId = stack.peek().getNavigatorEventId();
-        snackbarAndFabContainer.showSnackbar(navigatorEventId, params);
+        // snackbarAndFabContainer.showSnackbar(navigatorEventId, params);
     }
 
     @Override
     public void dismissSnackbar() {
-        snackbarAndFabContainer.dismissSnackbar();
+        // snackbarAndFabContainer.dismissSnackbar();
     }
 
     @Override
